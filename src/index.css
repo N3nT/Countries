@@ -1,1 +1,11 @@
 @import "tailwindcss";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme{
+  --color-darkModeEl: hsl(209, 23%, 22%);
+  --color-lightModeTxt: hsl(200, 15%, 8%);
+  --color-darkModeBg: hsl(207, 26%, 17%);
+  --color-lightModeInput: hsl(0, 0%, 52%);
+  --color-lightModeBackground: hsl(0, 0%, 98%);
+  --color-darkModeText: hsl(0, 0%, 100%);
+}
