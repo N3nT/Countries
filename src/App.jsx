@@ -1,4 +1,3 @@
-import viteLogo from '/vite.svg'
 import { useState } from 'react';
 
 import Nav from './components/Nav.jsx';
