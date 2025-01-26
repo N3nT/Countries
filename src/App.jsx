@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Routes , Route } from "react-router-dom";
 
 import Nav from './components/Nav.jsx';
 import Search from './components/Search.jsx';
@@ -23,11 +24,14 @@ function App() {
       <div className='max-w-[1920px]'>
         <Search/>
         <div className='flex flex-wrap justify-center'>
-        {data.map((country, index) => {
-            // if(index < 10){
-              return(<Country key={index} countryData={country}/>)
-            //}
-          })}
+          {/* <Routes>
+            <Route path="/" exac element={<Nav/>}/> */}
+            {data.map((country, index) => {
+              // if(index < 10){
+                return(<Country key={index} countryData={country}/>)
+              //}
+            })}
+          {/* </Routes> */}
         </div>
       </div>
     </div>
