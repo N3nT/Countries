@@ -24,9 +24,9 @@ function App() {
         <Search/>
         <div className='flex flex-wrap justify-center'>
         {data.map((country, index) => {
-            if(index < 10){
+            // if(index < 10){
               return(<Country key={index} countryData={country}/>)
-            }
+            //}
           })}
         </div>
       </div>

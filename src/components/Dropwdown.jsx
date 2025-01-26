@@ -3,9 +3,9 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 function Dropdown() {
   return (
-    <Menu as="div" className="relative inline-block text-left md:ml-5">
+    <Menu as="div" className="relative inline-block text-left md:ml-5 min-w-[165px]">
       <div>
-        <MenuButton className="inline-flex justify-center gap-x-1.5 rounded-md bg-white px-5 py-5 text-sm font-semibold text-lightModeTxt hover:bg-gray-50  shadow-md dark:bg-darkModeEl dark:text-white">
+        <MenuButton className="inline-flex justify-center gap-x-1.5 rounded-md bg-white px-5 py-5 text-sm font-semibold text-lightModeTxt hover:bg-lightModeBackground dark:hover:bg-darkModeBg shadow-md dark:bg-darkModeEl dark:text-white">
           Filter by Region
           <ChevronDownIcon aria-hidden="true" className="-mr-1 size-5 text-gray-400" />
         </MenuButton>
