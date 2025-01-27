@@ -1,13 +1,11 @@
+import { BrowserRouter, Routes , Route } from "react-router-dom";
 import { useState } from 'react';
-import { Routes , Route } from "react-router-dom";
 
-import Nav from './components/Nav.jsx';
-import Search from './components/Search.jsx';
-import Country from './components/Country.jsx';
-
-import data from '../data.json';
+import Home from './pages/Home.jsx';
+import Detail from './pages/Detail.jsx';
 
 function App() {
+
   const[theme, setTheme] = useState('light');
 
   const handleDarkMode = () => {
@@ -19,21 +17,13 @@ function App() {
   }
 
   return (
-    <div className="text-lightModeTxt bg-lightModeBackground dark:bg-darkModeBg flex flex-col items-center" data-theme={theme}>
-      <Nav theme={theme} handleDarkMode={handleDarkMode}/>
-      <div className='max-w-[1920px]'>
-        <Search/>
-        <div className='flex flex-wrap justify-center'>
-          {/* <Routes>
-            <Route path="/" exac element={<Nav/>}/> */}
-            {data.map((country, index) => {
-              // if(index < 10){
-                return(<Country key={index} countryData={country}/>)
-              //}
-            })}
-          {/* </Routes> */}
-        </div>
-      </div>
+    <div data-theme={theme}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home handleDarkMode={handleDarkMode} theme={theme}/>}/>
+            <Route path="/:slug" element={<Detail handleDarkMode={handleDarkMode} theme={theme}/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
