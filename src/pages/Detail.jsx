@@ -90,7 +90,7 @@ function Detail(props) {
 								</p>
 							</div>
 						</div>
-						<div className='flex flex-col justify-items-start'>
+						<div className='flex flex-col justify-items-start mb-10'>
 							<h2 className='font-bold mt-10 mb-5'>Border Countries: </h2>
 							<div className='flex flex-wrap'>
 								{detail.borders ? (
