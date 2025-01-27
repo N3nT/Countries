@@ -39,13 +39,13 @@ function Detail(props) {
 				>
 					{<ArrowLeft />}Back
 				</Link>
-				<div>
+				<div className='flex flex-col lg:flex-row items-center justify-center w-full'>
 					<img
-						className='max-w-[650px] w-full mb-10'
+						className='max-w-[687px] w-full mb-10'
 						src={detail.flags.svg}
 						alt={`${detail.name} flag`}
 					/>
-					<div>
+					<div className='lg:ml-30 max-w-[687px]'>
 						<h1 className='font-bold text-xl'>{detail.name}</h1>
 						<div>
 							<div className='mt-5'>
@@ -77,9 +77,12 @@ function Detail(props) {
 								</p>
 								<p className='mb-1'>
 									<span className='font-bold'>Currencies: </span>
-									{detail.currencies.map((currency) => {
+									{detail.currencies ? 
+									(detail.currencies.map((currency) => {
 										return `${currency.name}, `
-									})}
+									})) : (
+									<></>
+									)}
 								</p>
 								<p className='mb-1'>
 									<span className='font-bold'>Languages: </span>
@@ -90,7 +93,7 @@ function Detail(props) {
 							</div>
 						</div>
 						<div className='flex flex-col justify-items-start'>
-							<h2 className='font-bold'>Border Countries: </h2>
+							<h2 className='font-bold mt-10 mb-5'>Border Countries: </h2>
 							<div className='flex flex-wrap'>
 								{detail.borders ? (
 									detail.borders.map((border) => {
@@ -103,7 +106,7 @@ function Detail(props) {
 										return null // Jeśli nie znaleziono kraju, zwróć null
 									})
 								) : (
-									<p>None</p>
+									<></>
 								)}
 							</div>
 						</div>
