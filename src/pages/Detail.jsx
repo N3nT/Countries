@@ -23,7 +23,6 @@ function Detail(props) {
 		return (
 			<div>
 				{/* TODO FIX NAV HANDLER DARK MODE */}
-				<Nav theme={props.theme} handleDarkMode={props.handleDarkMode} />
 				<p>Ładowanie szczegółów...</p>
 			</div>
 		)
@@ -31,21 +30,21 @@ function Detail(props) {
 
 	return (
 		<div className='bg-lightModeBackground dark:bg-darkModeBg dark:text-white min-h-screen'>
-			<Nav />
+			<Nav handleDarkMode={props.handleDarkMode} theme={props.theme}/>
 			<div className='px-10'>
 				<Link
 					to='/'
-					className='p-4 my-10 w-[100px] bg-white dark:bg-darkModeEl shadow-md flex justify-between'
+					className='p-4 my-10 w-[100px] bg-white dark:bg-darkModeEl shadow-md flex justify-between rounded-md'
 				>
 					{<ArrowLeft />}Back
 				</Link>
-				<div className='flex flex-col lg:flex-row items-center justify-center w-full'>
+				<div className='flex flex-col xl:flex-row items-center justify-center w-full'>
 					<img
 						className='max-w-[687px] w-full mb-10'
 						src={detail.flags.svg}
 						alt={`${detail.name} flag`}
 					/>
-					<div className='lg:ml-30 max-w-[687px]'>
+					<div className='xl:ml-30 max-w-[687px] flex flex-col items-start w-full'>
 						<h1 className='font-bold text-xl'>{detail.name}</h1>
 						<div>
 							<div className='mt-5'>
@@ -81,7 +80,7 @@ function Detail(props) {
 									(detail.currencies.map((currency) => {
 										return `${currency.name}, `
 									})) : (
-									<></>
+									<></> //nie znaleziono kraju -> pusty element
 									)}
 								</p>
 								<p className='mb-1'>
@@ -101,12 +100,12 @@ function Detail(props) {
 											(country) => country.alpha3Code === border
 										)
 										if (country) {
-											return <p className="bg-white dark:bg-darkModeEl p-2 mr-2 my-2 shadow-md min-w-[100px] text-center" key={border}>{country.name}</p>
+											return <p className="bg-white dark:bg-darkModeEl p-2 mr-2 my-2 min-w-[100px] text-center rounded-md shadow-xl" key={border}>{country.name}</p>
 										}
-										return null // Jeśli nie znaleziono kraju, zwróć null
+										return null //nie znaleziono kraju -> null
 									})
 								) : (
-									<></>
+									<></> //nie znaleziono kraju -> pusty element
 								)}
 							</div>
 						</div>
