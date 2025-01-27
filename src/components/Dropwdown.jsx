@@ -1,7 +1,12 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
-function Dropdown() {
+function Dropdown(props) {
+
+  const handleOptionClick = (option) => {
+    props.setRegionSelect(option);
+  }
+
   return (
     <Menu as="div" className="relative inline-block text-left md:ml-5 min-w-[165px]">
       <div>
@@ -16,7 +21,7 @@ function Dropdown() {
         className="absolute left-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white ring-1 shadow-md ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in dark:bg-darkModeEl"
       >
         <div className="py-1">
-          <MenuItem>
+          <MenuItem onClick={() => handleOptionClick("Africa")}>
             <a
               href="#"
               className="dark:text-white block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
@@ -24,7 +29,7 @@ function Dropdown() {
               Africa
             </a>
           </MenuItem>
-          <MenuItem>
+          <MenuItem onClick={() => handleOptionClick("America")}>
             <a
               href="#"
               className=" dark:text-white block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
@@ -32,7 +37,7 @@ function Dropdown() {
               America
             </a>
           </MenuItem>
-          <MenuItem>
+          <MenuItem onClick={() => handleOptionClick("Asia")}>
             <a
               href="#"
               className="dark:text-white block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
@@ -40,7 +45,7 @@ function Dropdown() {
               Asia
             </a>
           </MenuItem>
-          <MenuItem>
+          <MenuItem onClick={() => handleOptionClick("Europe")}>
             <a
               href="#"
               className="dark:text-white block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
@@ -48,12 +53,20 @@ function Dropdown() {
               Europe
             </a>
           </MenuItem>
-          <MenuItem>
+          <MenuItem onClick={() => handleOptionClick("Oceania")}>
             <a
               href="#"
               className="dark:text-white block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
             >
               Oceania
+            </a>
+          </MenuItem>
+          <MenuItem onClick={() => handleOptionClick('')}>
+            <a
+              href="#"
+              className="dark:text-white block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
+            >
+              Reset
             </a>
           </MenuItem>
           </div>

@@ -6,7 +6,9 @@ import Detail from './pages/Detail.jsx';
 
 function App() {
 
-  const[theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('light');
+  const [searchBar, setSearchBar] = useState('');
+  const [regionSelect, setRegionSelect] = useState('');
 
   const handleDarkMode = () => {
     if(theme === "light"){
@@ -20,7 +22,7 @@ function App() {
     <div data-theme={theme}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home handleDarkMode={handleDarkMode} theme={theme}/>}/>
+          <Route path="/" element={<Home handleDarkMode={handleDarkMode} setSearchBar={setSearchBar} searchBar={searchBar} theme={theme} regionSelect={regionSelect} setRegionSelect={setRegionSelect}/>}/>
             <Route path="/:slug" element={<Detail handleDarkMode={handleDarkMode} theme={theme}/>} />
         </Routes>
       </BrowserRouter>

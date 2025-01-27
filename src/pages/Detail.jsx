@@ -22,7 +22,6 @@ function Detail(props) {
 	if (!detail) {
 		return (
 			<div>
-				{/* TODO FIX NAV HANDLER DARK MODE */}
 				<p>Ładowanie szczegółów...</p>
 			</div>
 		)
