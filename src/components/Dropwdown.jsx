@@ -29,12 +29,12 @@ function Dropdown(props) {
               Africa
             </a>
           </MenuItem>
-          <MenuItem onClick={() => handleOptionClick("America")}>
+          <MenuItem onClick={() => handleOptionClick("Americas")}>
             <a
               href="#"
               className=" dark:text-white block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
             >
-              America
+              Americas
             </a>
           </MenuItem>
           <MenuItem onClick={() => handleOptionClick("Asia")}>
