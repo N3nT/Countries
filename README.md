@@ -1,4 +1,4 @@
-## CountriesAPI
+## Countries
 
 ### Link:
 - [Live](https://countries-beta-seven.vercel.app/)
