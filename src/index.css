@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 @import "tailwindcss";
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme{
+  --font-nunitoSans: "Nunito Sans", sans-serif; 
   --color-darkModeEl: hsl(209, 23%, 22%);
   --color-lightModeTxt: hsl(200, 15%, 8%);
   --color-darkModeBg: hsl(207, 26%, 17%);

@@ -1,6 +1,7 @@
 import Dropdown from "./Dropwdown";
 
-function Search(props) {
+const Search = (props) => {
+    
     const handleSearchBarChange = (e) => {
         props.setSearchBar(e.target.value);
     }

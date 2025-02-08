@@ -1,5 +1,6 @@
 import { Sun, Moon } from 'lucide-react';
-function ModeIcon(props){
+
+const ModeIcon = (props) => {
     if(props.theme === "light"){
         return <Sun className='mx-2'/>
     }else{

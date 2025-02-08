@@ -2,11 +2,10 @@ import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
 import data from '../data.json'
-
 import Nav from '../components/Nav'
 import { ArrowLeft } from 'lucide-react'
 
-function Detail(props) {
+const Detail = (props) => {
 	const { slug } = useParams()
 	const [detail, setDetail] = useState(null)
 
@@ -79,7 +78,7 @@ function Detail(props) {
 									(detail.currencies.map((currency) => {
 										return `${currency.name}, `
 									})) : (
-									<></> //nie znaleziono kraju -> pusty element
+									<></> //country not found--> empty element
 									)}
 								</p>
 								<p className='mb-1'>
@@ -101,10 +100,10 @@ function Detail(props) {
 										if (country) {
 											return <p className="bg-white dark:bg-darkModeEl p-2 mr-2 my-2 min-w-[100px] text-center rounded-md shadow-xl" key={border}>{country.name}</p>
 										}
-										return null //nie znaleziono kraju -> null
+										return null //country not found-> null
 									})
 								) : (
-									<></> //nie znaleziono kraju -> pusty element
+									<></> //country not found--> empty element
 								)}
 							</div>
 						</div>

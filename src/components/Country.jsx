@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function Country(props){
+const  Country = (props) => {
     return(
         <div className="flex flex-col m-10 bg-white rounded-md dark:bg-darkModeEl dark:text-white max-w-90">
             <Link to={props.slug}>

@@ -4,7 +4,7 @@ import Country from '../components/Country.jsx'
 
 import data from '../data.json'
 
-function Home(props) {
+const Home = (props) => {
 	return (
 		<div className='text-lightModeTxt bg-lightModeBackground dark:bg-darkModeBg flex flex-col items-center min-h-screen'>
 			<Nav handleDarkMode={props.handleDarkMode} theme={props.theme} />
