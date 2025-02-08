@@ -14,14 +14,14 @@ const Detail = (props) => {
 		if (findDetail.length > 0) {
 			setDetail(findDetail[0])
 		} else {
-			console.error('Nie znaleziono kraju dla podanego slug.')
+			console.error('Country not found')
 		}
 	}, [slug])
 
 	if (!detail) {
 		return (
 			<div>
-				<p>Ładowanie szczegółów...</p>
+				<p>Loading...</p>
 			</div>
 		)
 	}
