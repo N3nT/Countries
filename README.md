@@ -1,7 +1,7 @@
 ## CountriesAPI
 
 ### Link:
-- [Live](countries-beta-seven.vercel.app)
+- [Live](https://countries-beta-seven.vercel.app/)
 
 ### Built with:
 - [React](https://reactjs.org/)
